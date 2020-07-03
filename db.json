@@ -18,10 +18,28 @@
       "id": 1,
       "title": "Название поста",
       "description": "Текст",
-      "claps": 0,
+      "claps": 3,
       "createdAt": "2019-09-29T00:00:00.000Z",
       "updateAt": "2019-09-29T00:00:00.000Z",
       "userId": 1
+    },
+    {
+      "title": "Test321",
+      "description": "test321",
+      "claps": 0,
+      "createdAt": "2020-07-03T13:31:50.729Z",
+      "updateAt": "2020-07-03T13:31:50.729Z",
+      "userId": 1,
+      "id": 3
+    },
+    {
+      "title": "Test4",
+      "description": "12345677",
+      "claps": 0,
+      "createdAt": "2020-07-03T13:34:37.231Z",
+      "updateAt": "2020-07-03T13:34:37.231Z",
+      "userId": 1,
+      "id": 4
     }
   ]
 }

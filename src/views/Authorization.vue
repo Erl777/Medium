@@ -1,24 +1,29 @@
 <template>
     <div>
         <h2>Sign in with email</h2>
-        <form action="">
+        <form action="" @submit.prevent="auth">
 
             <b-field label="Email"
+                     :message="emailMessage"
                      >
                 <b-input type="email"
-                         value=""
+                         v-model="formData.email"
+                         validation-message="Не верно"
+                         required
                          maxlength="30">
                 </b-input>
             </b-field>
 
-            <b-field label="Password">
+            <b-field label="Password"
+                     :message="passwordMessage">
                 <b-input type="password"
-                         value=""
-                         password-reveal>
+                         v-model="formData.password"
+                         required
+                         password-reveal minlength="5">
                 </b-input>
             </b-field>
 
-            <b-button @click="clickMe">Log in</b-button>
+            <button class="button">Log in</button>
 
         </form>
     </div>
@@ -27,9 +32,39 @@
 <script>
     export default {
         name: "Authorization",
+        data() {
+            return {
+                formData: {
+                    email: '',
+                    password: ''
+                },
+                passwordMessage: '',
+                emailMessage: ''
+            }
+        },
         methods: {
-            clickMe: function () {
-                console.log('click123');
+            auth: function () {
+                this.passwordMessage = '';
+                this.axios.get('http://localhost:3000/users').then(res => {
+                    res.data.forEach( (user) => {
+                        if (user.login === this.formData.email) {
+                            this.emailMessage = '';
+                            if (user.password == this.formData.password) {
+                                console.log('Hi');
+                                localStorage.setItem('id', user.id);
+                                this.$store.commit('setUserId', localStorage.getItem('id'));
+                                this.axios.get('http://localhost:3000/users/' + localStorage.getItem('id')).then(res => {
+                                    this.$store.state.user = res.data;
+                                });
+                                this.$router.push('/');
+                            } else {
+                                this.passwordMessage = 'No';
+                            }
+                        } else {
+                            this.emailMessage = 'no';
+                        }
+                    })
+                });
             }
         }
     }
