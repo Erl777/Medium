@@ -2,7 +2,7 @@
   <div id="app">
     <div id="nav">
       <router-link class="home" to="/">Medium</router-link>
-      <router-link to="/create">Create</router-link>
+      <router-link v-if="$store.state.user.role === 'writer'" to="/create">Create</router-link>
       <router-link v-show="$store.state.user.id == 0" to="/authorization">Sign in</router-link>
       <a @click="logOut" v-show="$store.state.user.id != 0">Log out</a>
     </div>
