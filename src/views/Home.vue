@@ -1,15 +1,8 @@
 <template>
   <div class="home">
-<!--    <Card v-for="(post, index )  in $store.state.posts"-->
-<!--          :key="index"-->
-<!--          :title="post.title"-->
-<!--          :description="post.description"-->
-<!--          :time="post.createdAt"-->
-<!--          :claps="post.claps"-->
-<!--    />-->
 
     <div class="card"
-         v-for="(post, index )  in $store.state.posts"
+         v-for="(post, index )  in paginatedItems"
          :key="index">
       <header class="card-header">
         <p class="card-header-title">
@@ -57,26 +50,41 @@
 </template>
 
 <script>
-// @ is an alias to /src
-// import HelloWorld from '@/components/HelloWorld.vue'
-// import Card from "../components/Card";
 export default {
   name: 'Home',
   data() {
     return {
-      total: 200,
+      total: 20,
       current: 1,
-      perPage: 5,
+      perPage: 10,
       rangeBefore: 3,
       rangeAfter: 1,
-      order: '',
+      order: 'is-centered',
       size: '',
       isSimple: false,
       isRounded: false,
-      prevIcon: 'chevron-left',
-      nextIcon: 'chevron-right'
+      prevIcon: 'arrow-left',
+      nextIcon: 'arrow-right',
+      allPosts: this.$store.state.posts,
+      items: [],
+
     }
   },
+    beforeMount(){
+        this.axios.get('http://localhost:3000/posts').then(res => {
+            this.$store.state.posts = res.data;
+            this.allPosts = this.$store.state.posts;
+            this.total = this.$store.state.posts.length;
+        });
+
+      console.log(this.$store.state.posts);
+    },
+    computed: {
+        paginatedItems() {
+            let page_number = this.current-1;
+            return this.allPosts.slice(page_number * this.perPage, (page_number + 1) * this.perPage);
+        }
+    },
   methods:{
     deletePost(id, index) {
       this.axios.delete('http://localhost:3000/posts/' + id).then(res =>{
@@ -91,14 +99,6 @@ export default {
       this.axios.patch('http://localhost:3000/posts/' + id, this.$store.state.posts[index]).then(res => {
         return res;
       });
-      // let data = {
-      //   title: "Название поста123",
-      //   description: "Текст123",
-      //   claps: 0,
-      //   createdAt: new Date(),
-      //   updateAt: new Date(),
-      //   userId: this.$store.state.user.id
-      // };
     }
   }
 }
@@ -136,5 +136,11 @@ export default {
     left: 0.5rem;
     bottom: 0;
     color: #9c9c9c;
+      font-size: 14px;
   }
+    .pagination{
+        max-width: 80%;
+        margin: 0 auto;
+        padding: 0 0 10px 0;
+    }
 </style>

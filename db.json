@@ -24,18 +24,9 @@
       "userId": 1
     },
     {
-      "title": "Test321",
-      "description": "test321",
-      "claps": 5,
-      "createdAt": "2020-07-03T13:31:50.729Z",
-      "updateAt": "2020-07-03T13:31:50.729Z",
-      "userId": 1,
-      "id": 3
-    },
-    {
-      "title": "Test4",
+      "title": "post3",
       "description": "12345677",
-      "claps": 4,
+      "claps": 6,
       "createdAt": "2020-07-03T13:34:37.231Z",
       "updateAt": "2020-07-03T13:34:37.231Z",
       "userId": 1,
@@ -44,25 +35,16 @@
     {
       "title": "post4",
       "description": "text text text",
-      "claps": 3,
+      "claps": 4,
       "createdAt": "2020-07-04T08:11:55.783Z",
       "updateAt": "2020-07-04T08:11:55.783Z",
       "userId": 1,
       "id": 5
     },
     {
-      "title": "post5",
-      "description": "post5",
-      "claps": 0,
-      "createdAt": "2020-07-04T08:46:29.312Z",
-      "updateAt": "2020-07-04T08:46:29.312Z",
-      "userId": 1,
-      "id": 6
-    },
-    {
       "title": "post6",
       "description": "post6",
-      "claps": 0,
+      "claps": 1,
       "createdAt": "2020-07-04T08:46:46.315Z",
       "updateAt": "2020-07-04T08:46:46.315Z",
       "userId": 1,
@@ -71,7 +53,7 @@
     {
       "title": "post7",
       "description": "post7",
-      "claps": 0,
+      "claps": 1,
       "createdAt": "2020-07-04T08:47:02.932Z",
       "updateAt": "2020-07-04T08:47:02.932Z",
       "userId": 1,
@@ -80,7 +62,7 @@
     {
       "title": "post8",
       "description": "post8",
-      "claps": 0,
+      "claps": 2,
       "createdAt": "2020-07-04T08:47:11.392Z",
       "updateAt": "2020-07-04T08:47:11.392Z",
       "userId": 1,
@@ -89,7 +71,7 @@
     {
       "title": "post9",
       "description": "post9",
-      "claps": 0,
+      "claps": 1,
       "createdAt": "2020-07-04T08:47:56.804Z",
       "updateAt": "2020-07-04T08:47:56.804Z",
       "userId": 1,
@@ -98,7 +80,7 @@
     {
       "title": "post10",
       "description": "post10",
-      "claps": 0,
+      "claps": 1,
       "createdAt": "2020-07-04T08:48:06.562Z",
       "updateAt": "2020-07-04T08:48:06.562Z",
       "userId": 1,
@@ -107,7 +89,7 @@
     {
       "title": "post11",
       "description": "post11",
-      "claps": 0,
+      "claps": 1,
       "createdAt": "2020-07-04T08:48:19.080Z",
       "updateAt": "2020-07-04T08:48:19.080Z",
       "userId": 1,
@@ -116,11 +98,20 @@
     {
       "title": "post12",
       "description": "post12",
-      "claps": 0,
+      "claps": 1,
       "createdAt": "2020-07-04T08:48:30.869Z",
       "updateAt": "2020-07-04T08:48:30.869Z",
       "userId": 1,
       "id": 13
+    },
+    {
+      "title": "Название поста",
+      "description": "Текст",
+      "claps": 9,
+      "createdAt": "2019-09-29T00:00:00.000Z",
+      "updateAt": "2019-09-29T00:00:00.000Z",
+      "userId": 1,
+      "id": 14
     }
   ]
 }
