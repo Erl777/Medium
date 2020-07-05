@@ -27,15 +27,13 @@
     beforeMount() {
       this.axios.get('http://localhost:3000/posts/' + this.$route.params.id).then(res => {
         this.formData = res.data;
+        this.formData.updateAt = new Date();
       });
     },
     methods: {
       saveEdited(){
         this.axios.patch('http://localhost:3000/posts/' + this.$route.params.id, this.formData).then(res => {
-          this.axios.get('http://localhost:3000/posts').then(res => {
-            this.$store.state.posts = res.data;
             this.$router.push('/');
-          });
           return res;
         });
       }

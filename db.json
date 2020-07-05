@@ -25,17 +25,17 @@
     },
     {
       "title": "post3",
-      "description": "12345677",
+      "description": "1234567777",
       "claps": 6,
       "createdAt": "2020-07-03T13:34:37.231Z",
-      "updateAt": "2020-07-03T13:34:37.231Z",
+      "updateAt": "2020-07-05T08:28:00.089Z",
       "userId": 1,
       "id": 4
     },
     {
       "title": "post4",
       "description": "text text text",
-      "claps": 4,
+      "claps": 5,
       "createdAt": "2020-07-04T08:11:55.783Z",
       "updateAt": "2020-07-04T08:11:55.783Z",
       "userId": 1,
@@ -62,7 +62,7 @@
     {
       "title": "post8",
       "description": "post8",
-      "claps": 2,
+      "claps": 3,
       "createdAt": "2020-07-04T08:47:11.392Z",
       "updateAt": "2020-07-04T08:47:11.392Z",
       "userId": 1,
@@ -107,11 +107,20 @@
     {
       "title": "Название поста",
       "description": "Текст",
-      "claps": 9,
+      "claps": 8,
       "createdAt": "2019-09-29T00:00:00.000Z",
       "updateAt": "2019-09-29T00:00:00.000Z",
       "userId": 1,
       "id": 14
+    },
+    {
+      "title": "post3",
+      "description": "1234567777",
+      "claps": 8,
+      "createdAt": "2020-07-03T13:34:37.231Z",
+      "updateAt": "2020-07-05T08:28:00.089Z",
+      "userId": 1,
+      "id": 15
     }
   ]
 }

@@ -38,7 +38,6 @@
           });
           return res;
         });
-        console.log(this.$store.state);
       }
     }
   }

@@ -50,7 +50,6 @@
                         if (user.login === this.formData.email) {
                             this.emailMessage = '';
                             if (user.password == this.formData.password) {
-                                console.log('Hi');
                                 localStorage.setItem('id', user.id);
                                 this.$store.commit('setUserId', localStorage.getItem('id'));
                                 this.axios.get('http://localhost:3000/users/' + localStorage.getItem('id')).then(res => {
@@ -58,10 +57,10 @@
                                 });
                                 this.$router.push('/');
                             } else {
-                                this.passwordMessage = 'No';
+                                this.passwordMessage = 'Error in password';
                             }
                         } else {
-                            this.emailMessage = 'no';
+                            this.emailMessage = 'Incorrect email';
                         }
                     })
                 });

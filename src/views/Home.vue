@@ -77,7 +77,6 @@ export default {
             this.total = this.$store.state.posts.length;
         });
 
-      console.log(this.$store.state.posts);
     },
     computed: {
         paginatedItems() {
@@ -91,11 +90,9 @@ export default {
         return res;
       });
       this.$store.state.posts.splice(index, index);
-      console.log('удален ' + index + ' post');
     },
     counter(id, index) {
       this.$store.state.posts[index].claps++;
-      console.log(this.$store.state.posts[index].claps);
       this.axios.patch('http://localhost:3000/posts/' + id, this.$store.state.posts[index]).then(res => {
         return res;
       });

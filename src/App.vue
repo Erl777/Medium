@@ -21,12 +21,10 @@ export default {
     }
   },
   beforeMount() {
-    console.log(localStorage.getItem('id'));
     if(localStorage.getItem('id') && localStorage.getItem('id') > 0) {
 
       this.axios.get('http://localhost:3000/users/' + localStorage.getItem('id')).then(res => {
         this.$store.state.user = res.data;
-        console.log(this.$store.state);
       });
 
     }
