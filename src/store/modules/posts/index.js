@@ -32,9 +32,6 @@ const mutations = {
 };
 
 const getters = {
-    userMe: state => {
-        return state.userMe;
-    },
     posts: state => {
         return state.posts;
     },

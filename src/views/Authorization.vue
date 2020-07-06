@@ -30,6 +30,7 @@
 </template>
 
 <script>
+    import {mapGetters} from 'vuex';
     export default {
         name: "Authorization",
         data() {
@@ -42,6 +43,11 @@
                 emailMessage: ''
             }
         },
+        computed: {
+            ...mapGetters([
+                'userMe',
+            ]),
+        },
         methods: {
             auth: function () {
                 this.passwordMessage = '';
@@ -53,12 +59,7 @@
                               this.emailMessage = '';
                               if (user.password == this.formData.password) {
                                   localStorage.setItem('id', user.id);
-                                  this.$store.state.user.userMe.id = localStorage.getItem('id');
-                                  // this.$store.commit('setUserId', localStorage.getItem('id'));
-
-                                  // this.axios.get('http://localhost:3000/users/' + localStorage.getItem('id')).then(res => {
-                                  //     this.$store.state.user = res.data;
-                                  // });
+                                  this.userMe.id = localStorage.getItem('id');
                                   this.$store.dispatch('getUserMe', localStorage.getItem('id'))
                                     .then(data => {
                                         return data;
@@ -73,25 +74,6 @@
                       })
                   });
 
-                // this.axios.get('http://localhost:3000/users').then(res => {
-                //     res.data.forEach( (user) => {
-                //         if (user.login === this.formData.email) {
-                //             this.emailMessage = '';
-                //             if (user.password == this.formData.password) {
-                //                 localStorage.setItem('id', user.id);
-                //                 this.$store.commit('setUserId', localStorage.getItem('id'));
-                //                 this.axios.get('http://localhost:3000/users/' + localStorage.getItem('id')).then(res => {
-                //                     this.$store.state.user = res.data;
-                //                 });
-                //                 this.$router.push('/');
-                //             } else {
-                //                 this.passwordMessage = 'Error in password';
-                //             }
-                //         } else {
-                //             this.emailMessage = 'Incorrect email';
-                //         }
-                //     })
-                // });
             }
         }
     }

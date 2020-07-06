@@ -76,12 +76,6 @@ export default {
         return data;
       });
 
-        // this.axios.get('http://localhost:3000/posts').then(res => {
-        //     this.$store.state.posts = res.data;
-        //     this.allPosts = this.$store.state.posts;
-        //     this.total = this.$store.state.posts.length;
-        // });
-
     },
     computed: {
       ...mapGetters([
@@ -90,18 +84,11 @@ export default {
       ]),
         paginatedItems() {
             let page_number = this.current-1;
-            console.log(this.posts);
             return this.posts.slice(page_number * this.perPage, (page_number + 1) * this.perPage);
         }
     },
   methods:{
     deletePost(id, index) {
-      // this.axios.delete('http://localhost:3000/posts/' + id).then(res =>{
-      //   return res;
-      // });
-      // this.$store.state.posts.splice(index, index);
-      console.log(id, index);
-      console.log(this.$store.state);
       let data = {
         id: id,
         index: index
@@ -111,11 +98,7 @@ export default {
       })
     },
     counter(id, index) {
-      // this.$store.state.posts[index].claps++;
-      // this.axios.patch('http://localhost:3000/posts/' + id, this.$store.state.posts[index]).then(res => {
-      //   return res;
-      // });
-      this.$store.state.user.posts[index].claps++;
+      this.posts[index].claps++;
       let data = {
         id: id,
         index: index,

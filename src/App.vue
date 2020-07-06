@@ -18,7 +18,6 @@ export default {
     logOut: function () {
       localStorage.setItem('id', 0);
       this.id = 0;
-      // this.$store.commit('setUserId', 0);
       this.$store.state.user.userMe.id = 0;
       this.$store.state.user.userMe.role = '';
     }
@@ -35,11 +34,6 @@ export default {
         .then(data => {
           return data;
       });
-
-      // this.axios.get('http://localhost:3000/users/' + localStorage.getItem('id')).then(res => {
-      //   this.$store.state.user = res.data;
-      // });
-
     }
 
   }
@@ -68,23 +62,17 @@ export default {
 
   #nav a {
     font-weight: bold;
-    /*color: #2c3e50;*/
     text-decoration: none;
     color: #000000;
   }
 
-  /*#nav a.router-link-exact-active {*/
-  /*  color: #42b983;*/
-  /*}*/
-
-
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+  #app {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+  }
 
 
 </style>

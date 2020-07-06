@@ -25,10 +25,6 @@
       }
     },
     beforeMount() {
-      // this.axios.get('http://localhost:3000/posts/' + this.$route.params.id).then(res => {
-      //   this.formData = res.data;
-      //   this.formData.updateAt = new Date();
-      // });
       this.$store.dispatch('getSinglePost', this.$route.params.id).then(data => {
         this.formData = data;
         this.formData.updateAt = new Date();
@@ -36,15 +32,7 @@
     },
     methods: {
       saveEdited(){
-        // this.axios.patch('http://localhost:3000/posts/' + this.$route.params.id, this.formData).then(res => {
-        //     this.$router.push('/');
-        //   return res;
-        // });
-        let data = {
-          id: this.$route.params.id,
-          elem: this.formData
-        };
-        this.$store.dispatch('saveRedactedPost', data ).then(data => {
+        this.$store.dispatch('saveRedactedPost', this.formData ).then(data => {
           this.$router.push('/');
           return data
         })
