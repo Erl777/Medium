@@ -19,10 +19,10 @@ npm run build
 json-server is in node modules, but if you use linux perhaps you will 
 need to install json-server globally
 ```
-json-server --watch db.json
-```
-```
 npm install -g json-server
+```
+```
+json-server --watch db.json
 ```
 
 ## After you start project you will see the home page
