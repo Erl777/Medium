@@ -2,30 +2,43 @@
   <div id="app">
     <div id="nav">
       <router-link class="home" to="/">Medium</router-link>
-      <router-link v-if="$store.state.user.role === 'writer'" to="/create">Create</router-link>
-      <router-link v-show="$store.state.user.id == 0" to="/authorization">Sign in</router-link>
-      <a @click="logOut" v-show="$store.state.user.id != 0">Log out</a>
+      <router-link v-if="userMe.role === 'writer'" to="/create">Create</router-link>
+      <router-link v-show="userMe.id == 0" to="/authorization">Sign in</router-link>
+      <a @click="logOut" v-show="userMe.id > 0">Log out</a>
     </div>
     <router-view/>
   </div>
 </template>
 
 <script>
+  import {mapGetters} from 'vuex';
 export default {
   name: 'Main',
   methods: {
     logOut: function () {
       localStorage.setItem('id', 0);
-      this.$store.commit('setUserId', 0);
-      this.$store.state.user = {id: 0};
+      this.id = 0;
+      // this.$store.commit('setUserId', 0);
+      this.$store.state.user.userMe.id = 0;
+      this.$store.state.user.userMe.role = '';
     }
   },
-  beforeMount() {
+  computed: {
+    ...mapGetters([
+      'userMe',
+    ])
+  },
+  mounted() {
+    console.log(this);
     if(localStorage.getItem('id') && localStorage.getItem('id') > 0) {
-
-      this.axios.get('http://localhost:3000/users/' + localStorage.getItem('id')).then(res => {
-        this.$store.state.user = res.data;
+      this.$store.dispatch('getUserMe', localStorage.getItem('id'))
+        .then(data => {
+          return data;
       });
+
+      // this.axios.get('http://localhost:3000/users/' + localStorage.getItem('id')).then(res => {
+      //   this.$store.state.user = res.data;
+      // });
 
     }
 

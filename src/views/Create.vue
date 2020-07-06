@@ -31,13 +31,17 @@
     },
     methods: {
       create(){
-        this.axios.post('http://localhost:3000/posts/', this.formData).then(res => {
-          this.axios.get('http://localhost:3000/posts').then(res => {
-            this.$store.state.posts = res.data;
-            this.$router.push('/');
-          });
-          return res;
-        });
+        // this.axios.post('http://localhost:3000/posts/', this.formData).then(res => {
+        //   this.axios.get('http://localhost:3000/posts').then(res => {
+        //     this.$store.state.posts = res.data;
+        //     this.$router.push('/');
+        //   });
+        //   return res;
+        // });
+        this.$store.dispatch('createPost', this.formData).then(data => {
+          this.$router.push('/');
+          return data;
+        })
       }
     }
   }

@@ -15,112 +15,84 @@
   ],
   "posts": [
     {
-      "id": 1,
-      "title": "Название поста",
-      "description": "Текст",
-      "claps": 6,
-      "createdAt": "2019-09-29T00:00:00.000Z",
-      "updateAt": "2019-09-29T00:00:00.000Z",
-      "userId": 1
-    },
-    {
-      "title": "post3",
-      "description": "1234567777",
-      "claps": 6,
-      "createdAt": "2020-07-03T13:34:37.231Z",
-      "updateAt": "2020-07-05T08:28:00.089Z",
-      "userId": 1,
-      "id": 4
-    },
-    {
-      "title": "post4",
-      "description": "text text text",
-      "claps": 5,
-      "createdAt": "2020-07-04T08:11:55.783Z",
-      "updateAt": "2020-07-04T08:11:55.783Z",
-      "userId": 1,
-      "id": 5
+      "title": "post5",
+      "description": "qwertui",
+      "claps": 8,
+      "createdAt": "2020-07-06T09:41:02.855Z",
+      "updateAt": "2020-07-06T10:05:45.589Z",
+      "id": 17
     },
     {
       "title": "post6",
-      "description": "post6",
+      "description": "pqwerouiqtq",
+      "claps": 4,
+      "createdAt": "2020-07-06T09:41:14.301Z",
+      "updateAt": "2020-07-06T09:41:14.301Z",
+      "id": 18
+    },
+    {
+      "title": "creating_post_trial",
+      "description": "saving_post_test",
       "claps": 1,
-      "createdAt": "2020-07-04T08:46:46.315Z",
-      "updateAt": "2020-07-04T08:46:46.315Z",
-      "userId": 1,
-      "id": 7
+      "createdAt": "2020-07-06T09:52:18.006Z",
+      "updateAt": "2020-07-06T10:14:31.701Z",
+      "id": 19
     },
     {
-      "title": "post7",
-      "description": "post7",
-      "claps": 1,
-      "createdAt": "2020-07-04T08:47:02.932Z",
-      "updateAt": "2020-07-04T08:47:02.932Z",
-      "userId": 1,
-      "id": 8
+      "title": "1234qwe",
+      "description": "qwdwcqw qwd qw  q wd q",
+      "claps": 5,
+      "createdAt": "2020-07-06T10:54:37.296Z",
+      "updateAt": "2020-07-06T10:54:37.296Z",
+      "id": 20
     },
     {
-      "title": "post8",
-      "description": "post8",
-      "claps": 3,
-      "createdAt": "2020-07-04T08:47:11.392Z",
-      "updateAt": "2020-07-04T08:47:11.392Z",
-      "userId": 1,
-      "id": 9
+      "title": "awdc12 12",
+      "description": " wdq d qw",
+      "claps": 0,
+      "createdAt": "2020-07-06T10:56:02.862Z",
+      "updateAt": "2020-07-06T10:56:02.862Z",
+      "id": 21
     },
     {
-      "title": "post9",
-      "description": "post9",
-      "claps": 1,
-      "createdAt": "2020-07-04T08:47:56.804Z",
-      "updateAt": "2020-07-04T08:47:56.804Z",
-      "userId": 1,
-      "id": 10
+      "title": "wqeqw ",
+      "description": " wqw eqw qw",
+      "claps": 0,
+      "createdAt": "2020-07-06T10:57:17.959Z",
+      "updateAt": "2020-07-06T10:57:17.959Z",
+      "id": 22
     },
     {
-      "title": "post10",
-      "description": "post10",
-      "claps": 1,
-      "createdAt": "2020-07-04T08:48:06.562Z",
-      "updateAt": "2020-07-04T08:48:06.562Z",
-      "userId": 1,
-      "id": 11
+      "title": "asdas",
+      "description": "asdasd",
+      "claps": 0,
+      "createdAt": "2020-07-06T10:59:30.053Z",
+      "updateAt": "2020-07-06T10:59:30.053Z",
+      "id": 23
     },
     {
-      "title": "post11",
-      "description": "post11",
-      "claps": 1,
-      "createdAt": "2020-07-04T08:48:19.080Z",
-      "updateAt": "2020-07-04T08:48:19.080Z",
-      "userId": 1,
-      "id": 12
+      "title": "asdas",
+      "description": "asd as ddasd as ",
+      "claps": 0,
+      "createdAt": "2020-07-06T11:00:13.015Z",
+      "updateAt": "2020-07-06T11:00:13.015Z",
+      "id": 24
     },
     {
-      "title": "post12",
-      "description": "post12",
-      "claps": 1,
-      "createdAt": "2020-07-04T08:48:30.869Z",
-      "updateAt": "2020-07-04T08:48:30.869Z",
-      "userId": 1,
-      "id": 13
+      "title": "asdqw ",
+      "description": "asd as ",
+      "claps": 0,
+      "createdAt": "2020-07-06T11:01:51.984Z",
+      "updateAt": "2020-07-06T11:01:51.984Z",
+      "id": 25
     },
     {
-      "title": "Название поста",
-      "description": "Текст",
-      "claps": 8,
-      "createdAt": "2019-09-29T00:00:00.000Z",
-      "updateAt": "2019-09-29T00:00:00.000Z",
-      "userId": 1,
-      "id": 14
-    },
-    {
-      "title": "post3",
-      "description": "1234567777",
-      "claps": 8,
-      "createdAt": "2020-07-03T13:34:37.231Z",
-      "updateAt": "2020-07-05T08:28:00.089Z",
-      "userId": 1,
-      "id": 15
+      "title": "qwe12323 ",
+      "description": "asd  qw dqw123",
+      "claps": 0,
+      "createdAt": "2020-07-06T11:01:59.053Z",
+      "updateAt": "2020-07-06T11:02:12.233Z",
+      "id": 26
     }
   ]
 }

@@ -19,17 +19,17 @@
       <footer class="card-footer">
         <b-button class="card-footer-item card-footer-button"
                   @click="counter(post.id, index)"
-                  v-if="$store.state.user.role === 'reader'"
+                  v-if="userMe.role === 'reader'"
         >Like {{post.claps}}</b-button>
-        <router-link :to="{name: 'edit', params: {id: post.id}}" v-show="$store.state.user.role === 'writer'" class="card-footer-item">Edit</router-link>
-        <b-button class="card-footer-item card-footer-button" v-show="$store.state.user.role === 'writer'" @click="deletePost(post.id, index)">Delete</b-button>
+        <router-link :to="{name: 'edit', params: {id: post.id}}" v-show="userMe.role === 'writer'" class="card-footer-item">Edit</router-link>
+        <b-button class="card-footer-item card-footer-button" v-show="userMe.role === 'writer'" @click="deletePost(post.id, index)">Delete</b-button>
       </footer>
     </div>
 
     <hr>
 
     <b-pagination
-            :total="total"
+            :total="posts.length"
             :current.sync="current"
             :range-before="rangeBefore"
             :range-after="rangeAfter"
@@ -50,6 +50,7 @@
 </template>
 
 <script>
+  import {mapGetters} from 'vuex';
 export default {
   name: 'Home',
   data() {
@@ -65,37 +66,64 @@ export default {
       isRounded: false,
       prevIcon: 'arrow-left',
       nextIcon: 'arrow-right',
-      allPosts: this.$store.state.posts,
+      allPosts: [],
       items: [],
 
     }
   },
     beforeMount(){
-        this.axios.get('http://localhost:3000/posts').then(res => {
-            this.$store.state.posts = res.data;
-            this.allPosts = this.$store.state.posts;
-            this.total = this.$store.state.posts.length;
-        });
+      this.$store.dispatch('getPosts').then(data => {
+        return data;
+      });
+
+        // this.axios.get('http://localhost:3000/posts').then(res => {
+        //     this.$store.state.posts = res.data;
+        //     this.allPosts = this.$store.state.posts;
+        //     this.total = this.$store.state.posts.length;
+        // });
 
     },
     computed: {
+      ...mapGetters([
+        'userMe',
+        'posts',
+      ]),
         paginatedItems() {
             let page_number = this.current-1;
-            return this.allPosts.slice(page_number * this.perPage, (page_number + 1) * this.perPage);
+            console.log(this.posts);
+            return this.posts.slice(page_number * this.perPage, (page_number + 1) * this.perPage);
         }
     },
   methods:{
     deletePost(id, index) {
-      this.axios.delete('http://localhost:3000/posts/' + id).then(res =>{
-        return res;
-      });
-      this.$store.state.posts.splice(index, index);
+      // this.axios.delete('http://localhost:3000/posts/' + id).then(res =>{
+      //   return res;
+      // });
+      // this.$store.state.posts.splice(index, index);
+      console.log(id, index);
+      console.log(this.$store.state);
+      let data = {
+        id: id,
+        index: index
+      };
+      this.$store.dispatch('deletePost', data).then(data => {
+        return data
+      })
     },
     counter(id, index) {
-      this.$store.state.posts[index].claps++;
-      this.axios.patch('http://localhost:3000/posts/' + id, this.$store.state.posts[index]).then(res => {
-        return res;
-      });
+      // this.$store.state.posts[index].claps++;
+      // this.axios.patch('http://localhost:3000/posts/' + id, this.$store.state.posts[index]).then(res => {
+      //   return res;
+      // });
+      this.$store.state.user.posts[index].claps++;
+      let data = {
+        id: id,
+        index: index,
+        elem: this.posts[index]
+      };
+      this.$store.dispatch('increaseClaps', data).then(data => {
+        return data;
+      })
     }
   }
 }
@@ -135,9 +163,9 @@ export default {
     color: #9c9c9c;
       font-size: 14px;
   }
-    .pagination{
-        max-width: 80%;
-        margin: 0 auto;
-        padding: 0 0 10px 0;
-    }
+  .pagination{
+    max-width: 80%;
+    margin: 0 auto;
+    padding: 0 0 10px 0;
+  }
 </style>
